@@ -36,7 +36,11 @@ case "$1" in
 		_help;;
 	-i|--inicar) 
 #Prcourando por diretórios
+
 	echo "Iniciando...."; sleep 5s; clear
+#Verificando a tecnologia 
+	servidor=$(curl -s --head $2 | grep "Server:")
+	echo "Tecnologia do dominio: $servidor"
 	for list in $(cat subdomains.txt); do
 	busca=$(curl -H "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0" -s -o /dev/null -w "%{http_code}" $2/$list/)
 		if [[ "$busca" = "200" ]];then
@@ -54,6 +58,9 @@ case "$1" in
 	-l|--local)
 #Prcourando por diretórios
 	echo "Iniciando...."; sleep 5s; clear
+#Verificando a tecnologia
+	servidor=$(curl -s --head $2 | grep "Server:")
+	echo "Tecnologia do dominio: $servidor"
 	for list in $(cat "$4"); do
 	busca=$(curl -H "User-Agent:Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0" -s -o /dev/null -w "%{http_code}" $2/$list/)
 		if [[ "$busca" = "200" ]];then
