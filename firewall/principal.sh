@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 ## Script criado para criar regras de firewall 
 
-source funcao.sh
+source biblioteca.sh
 echo -e \
 $'\033[33;1m
 ################## MATOS SECURITY #######################
