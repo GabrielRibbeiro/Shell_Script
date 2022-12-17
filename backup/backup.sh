@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 _user="$USER"
 
-echo \
+echo \ 
 "
 ################## MATOS SECURITY #######################
 ------------------ SISTEMA DE  BACKUP ----------------
-Versão 1.0				
+Versão 1.0	
 "
-
 #Verificando se usuário é root
 [[ "$UID" -eq "0" ]] && { echo "Usuário root não pode executar esse  programa"; exit 1; }
 
