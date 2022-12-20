@@ -1,4 +1,28 @@
 #!/usr/bin/env bash
+#
+# metadados.sh - Realiza a leitura de  metadados de arquivos
+# E-mail para contato =  gabriel.mmatos@proton.me
+# Manutenção = Gabriel  Matos
+# 
+#-------------------------------------------------
+			########  Descrição ###########
+# Este programa irá ler metadados dos arquivos  que  o usuário selecionar \
+# o programa  utiliza  a  ferramenta  lynx para realizar  busca  em  modo texto usando dorcs do google \
+#  em seguida  o script irá utilizar  a ferramenta exiftool para  ler os metadados
+
+# ----------------------------------------------
+# Histórico: 
+	# v1.0 15/12/2022 
+#
+#-------------------------------------------
+# Testado em:
+#	bash 
+
+echo -e \
+$'\033[33;1m
+################## MATOS SECURITY #######################
+------------------ SISTEMA DE  METADADOS ----------------
+Versão 1.0 \033[m'	
 
 alvo="$1"
 ext="$2"
