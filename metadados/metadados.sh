@@ -24,6 +24,12 @@ $'\033[33;1m
 ------------------ SISTEMA DE  METADADOS ----------------
 Versão 1.0 \033[m'	
 
+#lynx instalado? 
+[[ $(type lynx) ]] || { echo "Precisamos instalar o lynx por gentileza instale  o lynx"; exit 1; }
+# exiftool instalado ?
+[[ $(type exiftool) ]] || { echo "Precisamos instalar o lynx por gentileza instale  o exiftool"; exit 1; }
+
+
 alvo="$1"
 ext="$2"
 # Script para ler metadados de arquivos
@@ -32,6 +38,7 @@ function dados(){
 	if [[ -z "$alvo" ]] || [[ -z "$ext" ]];then
 	echo -e "Você precisa informar  o alvo e a  extensão\n use $0 -h para ver o manual "; exit;
 	fi
+	echo "Realizando busca, aguarde ...."
 	lynx --dump "https://google.com/search?&q=site$alvo+ext:$ext" | grep ".pdf" | cut -d "=" -f2 | egrep -v "site|google" | sed 's/...$//' > metadados
 	for url in $(cat metadados); do 
 		wget -q $url
